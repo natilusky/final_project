@@ -3,7 +3,7 @@ import bcrypt from 'bcryptjs'
 const users = [
   {
     username: 'natilusky',
-    password: bcrypt.hashSync('123123', 10),
+    password: bcrypt.hashSync('123123'),
     address: 'shapira',
     email: 'elilosky@walla.com',
     phone: '0252551525',
@@ -14,7 +14,7 @@ const users = [
   },
   {
     username: 'dsdsd',
-    password: bcrypt.hashSync('123123', 10),
+    password: bcrypt.hashSync('123123'),
     address: 'shara',
     email: 'eliloswalla.com',
     phone: '0252525',

@@ -1,30 +1,11 @@
 import express from 'express'
 const router = express.Router()
-import asyncHandler from 'express-async-handler'
-import connectDB from '../config/db.js'
+import {getProductById, getProducts} from '../controllers/productController.js'
 
-//@desc Fetch all products
-//@route GET /api/products
-router.get( '/', asyncHandler(async (req, res) => {
-    const products = await connectDB.select('*').from('product_schema')
-    res.json(products)
-  })
-)
 
-//@desc Fetch single products
-//@route GET /api/products/:id
-router.get( '/:id', asyncHandler(async (req, res) => {
-    const product = await connectDB
-      .select('*')
-      .from('product_schema')
-      .where({ _id: req.params.id })
+router.route('/').get(getProducts)
+router.route('/:id').get(getProductById)
 
-    if (product[0]) {
-      res.json(product[0])
-    } else {
-      res.status(404).json({ message: 'Product not found' })
-    }
-  })
-)
+
 
 export default router
