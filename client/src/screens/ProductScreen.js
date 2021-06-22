@@ -2,9 +2,9 @@ import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { Row, Col, Image, ListGroup, Card, Button } from 'react-bootstrap'
-import { listProductDetails } from '../action/productAction'
-import { Message } from '../components/Message'
-import { Loader } from '../components/Loader'
+import { listProductDetails } from '../action/productAction.js'
+import  Message  from '../components/Message.js'
+import { Loader } from '../components/Loader.js'
 
 const ProductScreen = ({ match }) => {
   const dispatch = useDispatch()
